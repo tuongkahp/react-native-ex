@@ -5,7 +5,7 @@ import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 import CategoryListItems from '../components/CategoryListItems'
 
-export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
+export default function LoginScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
   let categories = [
     { title: 'item1', iconName: 'plus' },
     { title: 'item2', iconName: 'github' },
@@ -21,19 +21,7 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
   ]
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>This is home screen</Text>
-      <ScrollView style={{ marginBottom: 16 }}>
-        {categories.map(category => (
-          <CategoryListItems key={category.title} category={category} />
-        ))}
-
-      </ScrollView>
-
-      <FlatList data={categories}
-        renderItem={({ item }) => <CategoryListItems category={item} />}
-        keyExtractor={item => item.title}
-      />
-
+      <Text style={styles.title}>This is first screen</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
       <EditScreenInfo path="/screens/TabOneScreen.tsx" />
     </View>
@@ -47,8 +35,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginBottom: 16,
     alignItems: 'stretch',
-    paddingLeft: 16,
-    marginTop: 16
+    paddingLeft: 16
   },
   title: {
     fontSize: 20,
